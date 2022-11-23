@@ -1,0 +1,5 @@
+name: sheet transcriber
+
+entry_points:
+    main:
+        command: 'python main.py'

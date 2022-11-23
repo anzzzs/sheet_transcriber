@@ -1,0 +1,40 @@
+[2022-11-23 16:48:57 +0300] [52714] [INFO] Starting gunicorn 20.1.0
+[2022-11-23 16:48:57 +0300] [52714] [INFO] Listening at: http://127.0.0.1:5000 (52714)
+[2022-11-23 16:48:57 +0300] [52714] [INFO] Using worker: sync
+[2022-11-23 16:48:57 +0300] [52715] [INFO] Booting worker with pid: 52715
+[2022-11-23 16:53:16 +0300] [52714] [INFO] Handling signal: int
+[2022-11-23 16:53:16 +0300] [52715] [INFO] Worker exiting (pid: 52715)
+[2022-11-23 16:53:17 +0300] [52714] [INFO] Shutting down: Master
+
+Aborted!
+[2022-11-23 16:53:25 +0300] [52994] [INFO] Starting gunicorn 20.1.0
+[2022-11-23 16:53:25 +0300] [52994] [INFO] Listening at: http://127.0.0.1:5000 (52994)
+[2022-11-23 16:53:25 +0300] [52994] [INFO] Using worker: sync
+[2022-11-23 16:53:25 +0300] [52995] [INFO] Booting worker with pid: 52995
+[2022-11-23 16:56:17 +0300] [52994] [INFO] Handling signal: int
+[2022-11-23 16:56:17 +0300] [52995] [INFO] Worker exiting (pid: 52995)
+
+Aborted!
+[2022-11-23 16:56:18 +0300] [52994] [INFO] Shutting down: Master
+[2022-11-23 16:56:23 +0300] [53214] [INFO] Starting gunicorn 20.1.0
+[2022-11-23 16:56:23 +0300] [53214] [INFO] Listening at: http://127.0.0.1:8889 (53214)
+[2022-11-23 16:56:23 +0300] [53214] [INFO] Using worker: sync
+[2022-11-23 16:56:23 +0300] [53215] [INFO] Booting worker with pid: 53215
+[2022-11-23 16:56:28 +0300] [53214] [INFO] Handling signal: int
+[2022-11-23 16:56:29 +0300] [53215] [INFO] Worker exiting (pid: 53215)
+
+Aborted!
+[2022-11-23 16:56:29 +0300] [53214] [INFO] Shutting down: Master
+[2022-11-23 16:58:52 +0300] [53388] [INFO] Starting gunicorn 20.1.0
+[2022-11-23 16:58:52 +0300] [53388] [INFO] Listening at: http://127.0.0.1:8889 (53388)
+[2022-11-23 16:58:52 +0300] [53388] [INFO] Using worker: sync
+[2022-11-23 16:58:52 +0300] [53389] [INFO] Booting worker with pid: 53389
+[2022-11-23 16:58:58 +0300] [53388] [INFO] Handling signal: int
+[2022-11-23 16:58:58 +0300] [53389] [INFO] Worker exiting (pid: 53389)
+[2022-11-23 16:58:59 +0300] [53388] [INFO] Shutting down: Master
+
+Aborted!
+[2022-11-23 17:20:55 +0300] [55570] [INFO] Starting gunicorn 20.1.0
+[2022-11-23 17:20:55 +0300] [55570] [INFO] Listening at: http://127.0.0.1:8889 (55570)
+[2022-11-23 17:20:55 +0300] [55570] [INFO] Using worker: sync
+[2022-11-23 17:20:55 +0300] [55575] [INFO] Booting worker with pid: 55575
