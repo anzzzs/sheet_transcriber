@@ -11,13 +11,8 @@ class BidirectionalLSTM(torch.nn.Module):
 
     def forward(self, input):
         recurrent, _ = self.rnn(input)
-        b, T, h = recurrent.size()
-        t_rec = recurrent.reshape(T * b, h)
-
-        output = self.embedding(t_rec)  # [T * b, nOut]
-        output = output.view(T, b, -1)
-
-        return output
+        output = self.embedding(recurrent)  # [b, T, nOut]
+        return output.permute(1, 0, 2)
 
 
 class ConvNormAct(torch.nn.Module):
@@ -56,16 +51,21 @@ class CRNN(torch.nn.Module):
             torch.nn.MaxPool2d(2))
         self.lstm = BidirectionalLSTM(input_size=256, hidden_size=256, out_features=out_features)
         self.softmax = torch.nn.LogSoftmax(dim=2)
+        self.register_full_backward_hook(self.backward_hook)
 
     def forward(self, input):
         res = self.conv(input)
-        # print(f"LSTM weights: {self.lstm.all_weights[0][0][:20]}")
-        # print(f"DENSE weights: {self.dense.weight[0][:20]}")
-        res = res.reshape([res.shape[0], res.shape[3], 256])
+        res = res.mean(dim=2)
+        res = res.permute(0, 2, 1)
         res = self.lstm(res)
         res = self.softmax(res)
         return res
 
     def backward_hook(self, module, grad_input, grad_output):
+        cleaned_grad_input = []
         for g in grad_input:
-            g[g != g] = 0   # replace all nan/inf in gradients to zero
+            if g is None:
+                cleaned_grad_input.append(None)
+                continue
+            cleaned_grad_input.append(torch.nan_to_num(g, nan=0.0, posinf=0.0, neginf=0.0))
+        return tuple(cleaned_grad_input)
